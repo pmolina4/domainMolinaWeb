@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MolinaWebDesign</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/style/bootstrap.min(8).css">
+</head>
+
+<body>
+  <!-----------------------------------NAVBAR------------------------------------------>
+  {% include 'includes/navbar.html' %}
+
+  <!-- Header Start -->
+  <div class="jumbotron jumbotron-fluid bg-jumbotron" style=" background-color: rgba(128, 128, 128, 0.5);">
+    <div class="container text-center py-5">
+      <h3 class="text-white display-3 mb-4">Crear Toldo</h3>
+      <div class="d-inline-flex align-items-center text-white">
+        <p class="m-0">Crear</p>
+        <i class="far fa-circle px-3"></i>
+        <p class="m-0">Actualizar</p>
+        <i class="far fa-circle px-3"></i>
+        <p class="m-0">Borrar</p>
+      </div>
+    </div>
+  </div>
+  <!-- Header End -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-6">
+        <form id="createFormToldo" action="/create_toldo" method="post">
+          <label class="form-label">Modelo</label>
+          <input type="text" name="modelo" class="form-control" id="modelo_input" />
+          <br>
+          <label class="form-label">Tipo</label>
+          <input type="text" name="tipo" class="form-control" id="tipo_input" />
+          
+          <br>
+          <label class="form-label">Dimensiones</label>
+          <input type="text" name="dimensiones" class="form-control" id="dimensiones_input" />
+          <br>
+          <label class="form-label">Imagen</label>
+          <input type="file" name="imagen" class="form-control" id="imagen_input" />
+          <br>
+          <button id="submitButton" class="btn btn-primary">Crear</button>
+          <a href="/toldo" class="btn btn-warning">Volver</a><br /><br />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    const form = document.querySelector('#createFormToldo');
+    const modelo_input = document.querySelector('#modelo_input');
+    const tipo_input = document.querySelector('#tipo_input');
+    const dimensiones_input = document.querySelector('#dimensiones_input');
+    const imagen_input = document.querySelector('#imagen_input');
+
+    function onSubmitClicked(event) {
+      // Detener la acción por defecto del formulario
+      event.preventDefault();
+
+      // Verificar si los valores de entrada son válidos
+      if (modelo_input.value.trim().length === 0) {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Modelo Requerido',
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 3000
+        }).then(function () {
+          return false;
+        });
+      }
+      else if (tipo_input.value.trim().length === 0) {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Tipo Requerido',
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 3000
+        }).then(function () {
+          return false;
+        });
+      }
+      else if (dimensiones_input.value.trim().length === 0) {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Dimensiones Requeridas',
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 3000
+        }).then(function () {
+          return false;
+        });
+      }
+      else if (imagen_input.value.trim().length === 0) {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Imagen Requerida',
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 3000
+        }).then(function () {
+          return false;
+        });
+      }
+      else {
+        Swal.fire({
+          title: 'CORRECTO!',
+          text: 'Toldo Insertado',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 3000
+        }).then(function () {
+          form.submit();
+        });
+      }
+    };
+
+
+    form.onsubmit = onSubmitClicked;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MolinaWebDesign</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/style/bootstrap.min(8).css">
+</head>
+
+<body>
+    <!-----------------------------------NAVBAR------------------------------------------>
+    {% include 'includes/navbar.html' %}
+
+    <!-----------------------------------CARROUSEL------------------------------------------>
+    {% include 'includes/carrousel.html' %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-8 bg-secondary p-4 rounded shadow text-white" style="opacity: 0.7;">
+                <h1 class=" row justify-content-center ">Perianas Molina Web Design</h1>
+                <ul class="list-group">
+                    <li class="list-group-item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum omnis
+                        eligendi ut quaerat quidem quam corporis velit distinctio! Autem debitis culpa aut dolores
+                        ratione, ducimus expedita voluptates ab! Inventore, quidem?Lorem ipsum dolor sit, amet
+                        consectetur adipisicing elit. Odio reiciendis voluptate, dolore in a eum nostrum ullam
+                        asperiores consequatur tempora molestias iste. Beatae a nesciunt ad ducimus sunt? Nulla,
+                        repellat!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ex impedit animi
+                        quo excepturi magni nobis mollitia minima distinctio placeat, inventore, incidunt ut? Recusandae
+                        quod quaerat beatae ipsa nisi dolore. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Vel nesciunt amet reprehenderit quia et blanditiis saepe quos cumque ipsum nam quas maxime,
+                        expedita nisi rem. Placeat, possimus esse. Blanditiis, quod!</li>
+                </ul>
+            </div>
+        </div>
+        <!-----------------------------------CARDS DE PRODUCTOS ------------------------------------------>
+        <div class="row mt-5">
+            <div class="col-4">
+                <div class="card">
+                    <img src="../static/style/img/toldo2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Toldos</h5>
+                        <p class="card-text">Vea nuestro catálogo de toldos. Solicite un técnico a domicilio para
+                            facilitarle presupuesto</p>
+                        <a href="" class="btn btn-primary">MÁS INFORMACIÓN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="../static/style/img/persianas.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Persianas</h5>
+                        <p class="card-text">Vea nuestro catálogo de persianas. Solicite un técnico a domicilio para
+                            facilitarle presupuesto</p>
+                        <a href="#" class="btn btn-primary">MÁS INFORMACIÓN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="../static/style/img/cortinas.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cortinas</h5>
+                        <p class="card-text">Vea nuestro catálogo de cortinas. Solicite un técnico a domicilio para
+                            facilitarle presupuesto</p>
+                        <a href="#" class="btn btn-primary">MÁS INFORMACIÓN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-----------------------------------UBICACION------------------------------------------>
+        <div class="row mt-5 mb-5">
+            <div class="col-9">
+                <h2> sequi eos quas voluptatem et velit doloribus ipsa, culpa quia architecto?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores minima neque est error voluptates
+                    perspiciatis quia eos velit amet incidunt a laudantium ut architecto adipisci pariatur accusamus,
+                    explicabo beatae nihil?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ut debitis minus, temporibus eos
+                    asperiores. Porro dignissimos ipsum nostrum fugit numquam soluta atque, asperiores, eveniet delectus
+                    consectetur odit natus maxime?</p>
+
+                <div>
+                    <button type="button" class="btn btn-primary">Primary</button>
+                    <button type="button" class="btn btn-outline-info">Dark</button>
+                </div>
+            </div>
+            <div class="col-3">
+                <!-- <img src="../static/style/img/toldo2.jpg" class="img-fluid rounded"> -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d937.0256770036153!2d-3.621347130350873!3d38.2735678510923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6ea28836fd8f4d%3A0x7c2784cae193a9d3!2sToldos%20Y%20Persianas%20Molina!5e1!3m2!1ses!2ses!4v1682502397208!5m2!1ses!2ses"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="img-fluid rounded"></iframe>
+            </div>
+        </div>
+        <!-----------------------------------FORMULARIO------------------------------------------>
+        <div class="row justify-content-center mt-5 pb-5">
+            <div class="col-7">
+                <h2 class=" row justify-content-center">¡Contáctanos Ahora!</h2>
+                <input type="text" class="form-control mt-2" placeholder="Nombre">
+                <input type="text" class="form-control mt-2" placeholder="Apellidos">
+                <input type="text" class="form-control mt-2" placeholder="Email">
+                <textarea name="" cols="30" rows="10" class="form-control mt-2" placeholder="Descripcio"></textarea>
+                <button type="button" class="btn btn-success mt-2">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

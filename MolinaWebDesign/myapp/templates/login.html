@@ -1,0 +1,60 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/style/css/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+<!--Coded with love by Mutiullah Samim-->
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Login</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form action="/" method="POST">
+                            <div class="form-group py-2">
+                                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text"
+                                        placeholder="Usuario" name="usuario" required> </div>
+                            </div>
+
+                            <div class="form-group py-1 pb-2">
+                                <div class="input-field"> <span class="fas fa-lock px-2"></span> <input type="password"
+                                        placeholder="Contrasena" name="contrasena" required> </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+
+                            <div class="text-center pt-4 text-muted">No tienes cuenta todavia ? <a
+                                    href="/create_usuario">Registrar</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script src="../static/style/js/session.js"></script>
+    {% endif %}
+    {% endwith %}
+</body>
+
+</html>

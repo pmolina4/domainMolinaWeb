@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MolinaWebDesign</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/style/bootstrap.min(8).css">
+</head>
+
+<body>
+    <!-----------------------------------NAVBAR------------------------------------------>
+    {% include 'includes/navbar.html' %}
+
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid bg-jumbotron" style=" background-color: rgba(128, 128, 128, 0.5);">
+        <div class="container text-center py-5">
+            <h3 class="text-white display-3 mb-4">Solicitudes Clientes</h3>
+            <div class="d-inline-flex align-items-center text-white">
+                <p class="m-0">Molina</p>
+                <i class="far fa-circle px-3"></i>
+                <p class="m-0">Web</p>
+                <i class="far fa-circle px-3"></i>
+                <p class="m-0">Design</p>
+            </div>
+        </div>
+    </div>
+    <!--Tabla Solicitues -->
+
+    <div class="container my-5">
+        <div style=" overflow:auto;  height: 70vh; border-style: solid;">
+            <table class="table table-bordered mx-auto">
+                <thead class="table-dark">
+                    <tr class="table-active">
+                        <th>ID</th>
+                        <th>Ancho</th>
+                        <th>Salida</th>
+                        <th>Color</th>
+                        <th>Tipo De Lona</th>
+                        <th>Usuario</th>
+                        <th>Factura</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for solicitud in solicitudes %}
+                    <tr>
+                        <td> {{ solicitud.PresupuestoToldo_id }} </td>
+                        <td> {{ solicitud.Ancho }} </td>
+                        <td> {{ solicitud.Salida }} </td>
+                        <td> {{ solicitud.Color }} </td>
+                        <td> {{ solicitud.TipoLona }} </td>
+                        <td> {{ solicitud.Usu }} </td>
+                        <td><a class="btn btn-primary"
+                                href="/download_pdf/{{solicitud.PresupuestoToldo_id}}">Descargar</a></td>
+                        <form id="deletForm" action="/delete_solicitud/{{solicitud.PresupuestoToldo_id}}" method="post">
+                            <td> <input type="submit" value="Delete" class="btn btn-secondary" /></td>
+                        </form>
+                        <td> <a class="btn btn-primary"
+                                href="/create_factura/{{solicitud.PresupuestoToldo_id}}">Factura</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var form = document.getElementById("deletForm");
+
+        // Espera a que se envíe el formulario
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe de inmediato
+            Swal.fire({
+                title: 'CORRECTO!',
+                text: 'Solicitud Eliminada!!',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 3000
+            }).then(function () {
+                form.submit(); // Envía el formulario
+            });
+        });
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

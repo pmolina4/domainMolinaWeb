@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Factura</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Enlace a Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Estilos personalizados -->
+  <style>
+    body {
+      padding: 2rem;
+      background-color: rgb(108, 134, 155);
+    }
+    .invoice-container {
+      border: 1px solid #ddd;
+      padding: 2rem;
+    }
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    .invoice-header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    .invoice-info {
+      font-size: 1.1rem;
+    }
+    .invoice-table {
+      margin-bottom: 2rem;
+    }
+    .invoice-table th, .invoice-table td {
+      padding: 0.5rem;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    .invoice-total {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="invoice-container">
+    <div class="invoice-header">
+      <h1>Factura Nº {{my_name}}</h1>
+    </div>
+    <div class="invoice-info">
+      <p><strong>Cliente:</strong>{{my_name}}</p>
+      <p><strong>Ancho:</strong> {{item1}}</p>
+      <p><strong>Salida (m):</strong> {{item2}}</p>
+      <p><strong>Color:</strong> {{item3}}</p>
+      <p><strong>Tipo de lona:</strong> {{item4}}</p>
+      <p><strong>Usuario:</strong> {{item5}}</p>
+      <p><strong>Fecha de facturación:</strong>{{today_date}}</p>
+    </div>
+    <table class="table invoice-table">
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th>Deatalles</th>
+          <th>Precio Unitario</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Anchura</td>
+          <td>{{item1}}</td>
+          <td>{{Pancho}}</td>
+          <td>{{Pancho}}</td>
+        </tr>
+        <tr>
+          <td>Salida</td>
+          <td>{{item2}}</td>
+          <td>{{Psalida}}</td>
+          <td>{{Psalida}}</td>
+        </tr>
+        <tr>
+          <td>Color</td>
+          <td>{{item3}}</td>
+          <td>{{Pcolor}}</td>
+          <td>{{Pcolor}}</td>
+        </tr>
+        <tr>
+          <td>Tipo Lona</td>
+          <td>{{item4}}</td>
+          <td>{{Plona}}</td>
+          <td>{{Plona}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Enlace a Bootstrap JS y jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
